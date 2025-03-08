@@ -4,4 +4,5 @@
     <string name="don_t_have_an_account_sign_in">Don’t have an account? Sign in</string>
     <string name="prescription">Prescription</string>
     <string name="ambulance">Ambulance</string>
+    <string name="log_in">Log In</string>
 </resources>

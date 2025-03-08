@@ -6,8 +6,10 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class RetroFile {
     object RetrofitClient {
-//        private const val BASE_URL = "http://192.168.1.41:3000/"
         private const val BASE_URL = "http://localhost:3000/"
+//        private const val BASE_URL = "http://10.0.2.2:3000/"
+
+        //        private const val BASE_URL = "http://localhost:3000/"
         val instance: AuthService by lazy {
             Retrofit.Builder()
                 .baseUrl(BASE_URL)

@@ -47,7 +47,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class Login : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
     private lateinit var emailInput: EditText
     private lateinit var passwordInput: EditText
@@ -92,23 +92,23 @@ class Login : AppCompatActivity() {
                     // Save token in SharedPreferences
                     sharedPreferences.edit().putString("auth_token", token).apply()
 
-                    Toast.makeText(this@Login, "Login Successful!", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this@Login, Homepage::class.java)
+                    Toast.makeText(this@LoginActivity, "Login Successful!", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this@LoginActivity, Homepage::class.java)
                     startActivity(intent)
                     finish()
                 } else {
-                    Toast.makeText(this@Login, "Invalid credentials", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@LoginActivity, "Invalid credentials", Toast.LENGTH_SHORT).show()
                 }
             }
 
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                Toast.makeText(this@Login, "Login Failed: ${t.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@LoginActivity, "Login Failed: ${t.message}", Toast.LENGTH_SHORT).show()
             }
         })
     }
 
     fun dntHaveAccount(view: View) {
-        val intent = Intent(this, Signup::class.java)
+        val intent = Intent(this, SignupActivity::class.java)
         startActivity(intent)
     }
 }

@@ -48,7 +48,6 @@ package com.example.docconnect
 //}
 //
 
-import DoctorsAdapter
 import DoctorsViewModel
 import Prescription
 import android.content.Intent

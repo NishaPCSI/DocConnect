@@ -1,6 +1,7 @@
 
 package com.example.docconnect
 
+import Doctor
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

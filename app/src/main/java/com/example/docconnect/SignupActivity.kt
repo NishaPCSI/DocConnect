@@ -49,7 +49,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.util.*
 
-class Signup : AppCompatActivity() {
+class SignupActivity : AppCompatActivity() {
 
     private lateinit var emailInput: EditText
     private lateinit var passwordInput: EditText
@@ -63,7 +63,16 @@ class Signup : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_signup)
-
+        val textView = findViewById<TextView>(R.id.textView3)
+        if (textView == null) {
+            Log.e("Debug", "textView3 is NULL! Check XML ID")
+        } else {
+            Log.d("Debug", "textView3 FOUND! Adding ClickListener")
+            textView.setOnClickListener {
+                Log.d("Debug", "TextView clicked!")
+                goToLogin(it)
+            }
+        }
         // Apply window insets
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -139,31 +148,33 @@ class Signup : AppCompatActivity() {
 //                                    startActivity(Intent(this@Signup, Login::class.java))
 //                                    finish()
 //                                     goToLogin(view: View) {
-                                startActivity(Intent(this@Signup, Login::class.java))
+                                startActivity(Intent(this@SignupActivity, LoginActivity::class.java))
 
 
 
                             } else {
-                                startActivity(Intent(this@Signup, Login::class.java))
+                                startActivity(Intent(this@SignupActivity, LoginActivity::class.java))
 
-                                Toast.makeText(this@Signup, it.message, Toast.LENGTH_SHORT).show()
+                                Toast.makeText(this@SignupActivity, it.message, Toast.LENGTH_SHORT).show()
                             }
                         }
                     } else {
                         val errorBody = response.errorBody()?.string() // Get error response
                         Log.e("SignupDebug", "Signup Failed - Error Body: $errorBody") // Log error
-                        Toast.makeText(this@Signup, "Signup Failed: $errorBody", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@SignupActivity, "Signup Failed: $errorBody", Toast.LENGTH_SHORT).show()
                     }
                 }
 
                 override fun onFailure(call: Call<SignupResponse>, t: Throwable) {
-                    Toast.makeText(this@Signup, "Error: ${t.message}", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@SignupActivity, "Error: ${t.message}", Toast.LENGTH_LONG).show()
                 }
             })
     }
 
 
     fun goToLogin(view: View) {
-        startActivity(Intent(this, Login::class.java))
+        Log.d("GoToLogin", "I am here") // Corrected Log.d syntax
+        startActivity(Intent(this, LoginActivity::class.java)) // Uncommented navigation
     }
+
 }

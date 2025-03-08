@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg"
-    tools:context=".Login">
+    tools:context=".LoginActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout11"
@@ -127,7 +127,7 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="40dp"
                 android:background="@drawable/blueborder"
-                android:text="Log In"
+                android:text="@string/log_in"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="@+id/editTextPhone"
