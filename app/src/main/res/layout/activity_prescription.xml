@@ -15,17 +15,16 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
-        <ImageView
-            android:id="@+id/imageView12"
+        <ImageButton
+            android:id="@+id/backbuttonPrescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:clickable="true"
-            android:onClick="goToHome"
+            android:background="@color/white"
             app:srcCompat="@drawable/leftarrow"
             tools:layout_editor_absoluteX="70dp"
             tools:layout_editor_absoluteY="44dp"
-            tools:ignore="OnClick" />
+             />
 
         <TextView
             android:id="@+id/textView17"

@@ -48,5 +48,15 @@
         android:textSize="12sp"/>
 </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="#D3D3D3"
+
+        >
+
+    </View>
 </LinearLayout>
 <!--</androidx.constraintlayout.widget.ConstraintLayout>-->

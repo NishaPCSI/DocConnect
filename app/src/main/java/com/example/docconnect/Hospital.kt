@@ -64,6 +64,6 @@ class HospitalActivity : AppCompatActivity() {
     fun goToHome(view: View) {
         val intent = Intent(this, Homepage::class.java)
         startActivity(intent)
-        finish()
+//        finish()
     }
 }

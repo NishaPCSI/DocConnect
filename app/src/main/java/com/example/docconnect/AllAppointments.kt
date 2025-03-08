@@ -43,9 +43,16 @@ class AllAppointments : AppCompatActivity() {
         appointmentViewModel.loadAppointments()
     }
 
-    fun goToHome(view: View) {
-        // Navigate to the home activity
-        var intent = Intent(this, HospitalActivity::class.java)
+//    fun goToHome(view: View) {
+//        // Navigate to the home activity
+//        var intent = Intent(this, Homepage::class.java)
+//        startActivity(intent)
+//    }
+
+     fun goToHome() {
+        val intent = Intent(this, Homepage::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
         startActivity(intent)
+        finish() // Finish this activity to prevent stacking
     }
 }
