@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".item_prescription">
+
+    <LinearLayout
+        android:id="@+id/linearLayout23"
+        android:layout_width="328dp"
+        android:layout_height="137dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/lightskyblue"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="280dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp">
+
+            <ImageView
+                android:id="@+id/imageView24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="24dp"
+                app:srcCompat="@drawable/doctoricon"
+                tools:layout_editor_absoluteX="32dp"
+                tools:layout_editor_absoluteY="441dp" />
+
+            <LinearLayout
+                android:layout_width="190dp"
+                android:layout_height="47dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/doctorName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dr. Michael Williams"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    tools:layout_editor_absoluteX="130dp"
+                    tools:layout_editor_absoluteY="441dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/doctorProfession"
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Heart specialist"
+                        tools:layout_editor_absoluteX="131dp"
+                        tools:layout_editor_absoluteY="478dp" />
+                <TextView
+                    android:id="@+id/doctorLocation"
+                    android:layout_width="196dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Birmingham"
+                    tools:layout_editor_absoluteX="131dp"
+                    tools:layout_editor_absoluteY="478dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="285dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prescription:"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                tools:layout_editor_absoluteX="130dp"
+                tools:layout_editor_absoluteY="441dp" />
+
+            <TextView
+                android:id="@+id/prescription"
+                android:layout_width="285dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="a daily, low dose of aspirin (75mg) for 2 weeks"
+                android:textSize="13sp"
+                tools:layout_editor_absoluteX="131dp"
+                tools:layout_editor_absoluteY="478dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

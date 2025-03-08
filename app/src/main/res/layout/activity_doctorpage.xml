@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Doctorpage">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="201dp"
+        android:layout_height="24dp"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout3"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="35dp">
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="goToHome"
+            android:clickable="true"
+            app:srcCompat="@drawable/leftarrow"
+            tools:layout_editor_absoluteX="70dp"
+            tools:layout_editor_absoluteY="44dp" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:text="Doctor details"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="185dp"
+            tools:layout_editor_absoluteY="39dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="328dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/lightskyblue"
+        android:orientation="vertical"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
+
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp">
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="24dp"
+                app:srcCompat="@drawable/doctoricon"
+                tools:layout_editor_absoluteX="32dp"
+                tools:layout_editor_absoluteY="441dp" />
+
+            <LinearLayout
+                android:layout_width="170dp"
+                android:layout_height="47dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dr. Michael Williams"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    tools:layout_editor_absoluteX="130dp"
+                    tools:layout_editor_absoluteY="441dp" />
+
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Heart specialist"
+                    tools:layout_editor_absoluteX="131dp"
+                    tools:layout_editor_absoluteY="478dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="328dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="94dp"
+            android:layout_height="67dp"
+            android:background="@drawable/skyblueborder"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="228dp">
+
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="200+"
+                android:textAlignment="center"
+                android:textColor="#57B3EE"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Patients"
+                android:textAlignment="center"
+                android:textColor="#57B3EE"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="131dp"
+                tools:layout_editor_absoluteY="636dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="118dp"
+            android:layout_height="67dp"
+            android:layout_marginLeft="16sp"
+            android:background="@drawable/skyblueborder"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="228dp">
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="7+ Years"
+                android:textAlignment="center"
+                android:textColor="#57B3EE"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Experience"
+                android:textAlignment="center"
+                android:textColor="#57B3EE"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="131dp"
+                tools:layout_editor_absoluteY="636dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="80dp"
+            android:layout_height="66.7dp"
+            android:layout_marginLeft="16dp"
+            android:background="@drawable/skyblueborder"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="228dp">
+
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4"
+                android:textAlignment="center"
+                android:textColor="#57B3EE"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Rating"
+                android:textAlignment="center"
+                android:textColor="#57B3EE"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="131dp"
+                tools:layout_editor_absoluteY="636dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

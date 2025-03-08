@@ -12,10 +12,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DocConnect"
         tools:targetApi="31">
+
+        <!-- <meta-data -->
+        <!-- android:name="com.google.android.gms.ads.attributionTag" -->
+        <!-- android:value="VCN" /> -->
+        <activity
+            android:name=".Bookappointment"
+            android:exported="false" />
+        <activity
+            android:name=".HospitalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Prescription"
+            android:exported="false" />
+        <activity
+            android:name=".Doctorpage"
+            android:exported="false" />
+        <activity
+            android:name=".AllAppointments"
+            android:exported="false" />
+        <activity
+            android:name=".Homepage"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.DocConnect">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
