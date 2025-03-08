@@ -36,7 +36,7 @@ class HospitalActivity : AppCompatActivity() {
     private fun fetchHospitals() {
         val retrofit = Retrofit.Builder()
 //            .baseUrl("http://192.168.1.41:3000/") // Replace with your actual API base URL
-            .baseUrl("http://localhost:3000/")
+            .baseUrl("http://192.168.1.24:3000")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 

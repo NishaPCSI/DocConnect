@@ -4,19 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".item_prescription">
 
     <LinearLayout
         android:id="@+id/linearLayout23"
-        android:layout_width="328dp"
-        android:layout_height="137dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/lightskyblue"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
@@ -62,14 +64,15 @@
                         android:text="Heart specialist"
                         tools:layout_editor_absoluteX="131dp"
                         tools:layout_editor_absoluteY="478dp" />
-                <TextView
-                    android:id="@+id/doctorLocation"
-                    android:layout_width="196dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Birmingham"
-                    tools:layout_editor_absoluteX="131dp"
-                    tools:layout_editor_absoluteY="478dp" />
+
+                    <TextView
+                        android:id="@+id/doctorLocation"
+                        android:layout_width="196dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Birmingham"
+                        tools:layout_editor_absoluteX="131dp"
+                        tools:layout_editor_absoluteY="478dp" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

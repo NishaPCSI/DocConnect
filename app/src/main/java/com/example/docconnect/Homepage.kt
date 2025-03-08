@@ -84,7 +84,7 @@ class Homepage : AppCompatActivity() {
         }
     }
     fun goToPrescription (view: View){
-        var intent = Intent (this, Prescription::class.java)
+        val intent = Intent (this, com.example.docconnect.Prescription::class.java)
         startActivity(intent)
     }
 
@@ -94,7 +94,7 @@ class Homepage : AppCompatActivity() {
     }
 
     fun goToHomepage (view: View){
-        var intent = Intent (this, Ambulance::class.java)
+        val intent = Intent (this, Ambulance::class.java)
         startActivity(intent)
     }
 

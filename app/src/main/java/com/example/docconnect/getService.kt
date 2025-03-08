@@ -88,7 +88,7 @@ data class PrescriptionData(
 data class Prescription(
     val prescription: String,
     val doctorId: Int,
-    val doctorDetails: DoctorDetails
+    val Doctor: DoctorDetails
 )
 
 data class DoctorDetails(  // Renamed from "Doctor"
@@ -107,10 +107,10 @@ interface ApiService {
     @GET("api/doctor/get_all_doctors")  // Replace with your actual endpoint
     fun getDoctors(): Call<DoctorResponse>
 
-    @GET("appointments")  // Change this endpoint as per your API
+    @GET("api/appointment/get_all_appointments")  // Change this endpoint as per your API
     fun getAppointments(): Call<AppointmentResponse>
 
-    @GET("your_prescription_api_endpoint_here")
+    @GET("api/prescription/get_all_prescriptions")
     fun getPrescriptions(): Call<PrescriptionApiResponse>
 
 }

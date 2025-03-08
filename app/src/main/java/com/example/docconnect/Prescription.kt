@@ -29,6 +29,7 @@ package com.example.docconnect
 
 import Prescription
 import PrescriptionApiResponse
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -58,27 +59,50 @@ class Prescription : AppCompatActivity() {
 
         fetchPrescriptions()
     }
-
     private fun fetchPrescriptions() {
         val call = RetroFile.RetrofitClient.apiInstance.getPrescriptions()
         call.enqueue(object : Callback<PrescriptionApiResponse> {
+            @SuppressLint("NotifyDataSetChanged")
             override fun onResponse(
                 call: Call<PrescriptionApiResponse>,
                 response: Response<PrescriptionApiResponse>
             ) {
-                if (response.isSuccessful && response.body() != null) {
+                if (response.isSuccessful) {
                     val apiResponse = response.body()
-                    if (!apiResponse!!.isError && !apiResponse.prescriptions.isError) {
-                        prescriptionList.clear()
-                        prescriptionList.addAll(apiResponse.prescriptions.prescriptions)
-                        prescriptionAdapter.notifyDataSetChanged()
+
+                    // Log the entire response for debugging
+                    Log.d("PrescriptionActivity", "Response: ${response.body()}")
+
+                    if (apiResponse != null) {
+                        // Check for errors in the response
+                        if (!apiResponse.isError && !apiResponse.prescriptions.isError) {
+                            Log.d("PrescriptionActivity", "API call successful. Updating UI.")
+
+                            // Clear current list and update with the new data
+                            prescriptionList.clear()
+                            apiResponse.prescriptions.prescriptions.let { prescriptions ->
+                                prescriptionList.addAll(prescriptions)
+                            }
+
+                            // Notify adapter that the data has changed
+                            prescriptionAdapter.notifyDataSetChanged()
+
+                        } else {
+                            Log.e("PrescriptionActivity", "API returned an error: ${apiResponse.isError}")
+                        }
+                    } else {
+                        Log.e("PrescriptionActivity", "Response body is null.")
                     }
+                } else {
+                    Log.e("PrescriptionActivity", "API call failed: ${response.code()} - ${response.message()}")
+                    Log.e("PrescriptionActivity", "Error body: ${response.errorBody()?.string()}")
                 }
             }
 
             override fun onFailure(call: Call<PrescriptionApiResponse>, t: Throwable) {
-                Log.e("PrescriptionActivity", "Error fetching prescriptions: ${t.message}")
+                Log.e("PrescriptionActivity", "API request failed: ${t.message}", t)
             }
         })
     }
+
 }

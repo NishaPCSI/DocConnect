@@ -6,8 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-//import com.example.appointmentapp.R
-//import com.example.appointmentapp.model.Appointment
 import com.example.docconnect.R
 
 class AppointmentAdapter(private val appointmentList: List<Appointment>) :
