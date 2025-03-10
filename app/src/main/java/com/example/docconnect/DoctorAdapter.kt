@@ -1,7 +1,7 @@
-
 package com.example.docconnect
 
 import Doctor
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,14 +9,14 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.docconnect.R
 
-class DoctorsAdapter(private var doctors: List<Doctor>) :
+class DoctorsAdapter(private var doctors: List<Doctor>, private val onDoctorClick: (Int) -> Unit) :
     RecyclerView.Adapter<DoctorsAdapter.DoctorViewHolder>() {
 
     class DoctorViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val name: TextView = itemView.findViewById(R.id.doctorName)
         val profession: TextView = itemView.findViewById(R.id.doctorSpeciality)
         val location: TextView = itemView.findViewById(R.id.doctorLocation)
-//        val experience: TextView = itemView.findViewById(R.id.doctor_experience)
+//        val experience: TextView = itemView.findViewById(R.id.)
         val rating: TextView = itemView.findViewById(R.id.doctorRating)
         val totalPatients: TextView = itemView.findViewById(R.id.total_patients)
     }
@@ -35,6 +35,12 @@ class DoctorsAdapter(private var doctors: List<Doctor>) :
 //        holder.experience.text = "Experience: ${doctor.doctorExperience} years"
         holder.rating.text = "Rating: ${doctor.rating}"
         holder.totalPatients.text = "Patients: ${doctor.total_patients}"
+
+
+
+        holder.itemView.setOnClickListener {
+            onDoctorClick(doctor.doctorId) // Pass doctorId when clicked
+        }
     }
 
     override fun getItemCount(): Int = doctors.size

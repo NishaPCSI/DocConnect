@@ -20,7 +20,7 @@ class Ambulance : AppCompatActivity() {
         }
     }
     fun goToHome(view: View){
-        var intent = Intent(this,  Homepage::class.java)
+        val intent = Intent(this,  Homepage::class.java)
         startActivity(intent)
     }
 }

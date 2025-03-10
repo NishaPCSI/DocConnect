@@ -39,8 +39,10 @@
 
     <LinearLayout
         android:id="@+id/linearLayout10"
-        android:layout_width="323dp"
+        android:layout_width="0dp"
         android:layout_height="409dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -80,7 +82,7 @@
 
             <EditText
                 android:id="@+id/email"
-                android:layout_width="322dp"
+                android:layout_width="match_parent"
                 android:layout_height="44dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/border"
@@ -106,7 +108,7 @@
 
             <EditText
                 android:id="@+id/password"
-                android:layout_width="322dp"
+                android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/border"
@@ -122,11 +124,11 @@
 
             <Button
                 android:id="@+id/button2"
-                android:onClick="onLoginClicked"
-                android:layout_width="322dp"
+                android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="40dp"
                 android:background="@drawable/blueborder"
+                android:onClick="onLoginClicked"
                 android:text="@string/log_in"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
@@ -139,16 +141,16 @@
 
         <TextView
             android:id="@+id/textView3"
-            android:onClick="dntHaveAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="24dp"
+            android:clickable="true"
+            android:onClick="dntHaveAccount"
             android:text="@string/don_t_have_an_account_sign_up"
             android:textAlignment="center"
             android:textColor="#000000"
-            android:textSize="16sp"
-            android:clickable="true"/>
+            android:textSize="16sp" />
 
     </LinearLayout>
 

@@ -52,6 +52,7 @@ import DoctorsViewModel
 import Prescription
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -70,7 +71,11 @@ class Homepage : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        adapter = DoctorsAdapter(listOf())
+        adapter = DoctorsAdapter(listOf()) { doctorId ->
+            val intent = Intent(this, Doctorpage::class.java)
+            intent.putExtra("DOCTOR_ID", doctorId)  // Pass doctorId
+            startActivity(intent)
+        }
         recyclerView.adapter = adapter
 
         viewModel.fetchDoctors()
@@ -102,9 +107,12 @@ class Homepage : AppCompatActivity() {
         var intent = Intent (this, AllAppointments::class.java)
         startActivity(intent)
     }
+//
+//    fun goToDocDetail(view: View) {
+//        val doctorId = 5
+//        val intent = Intent(this, Doctorpage::class.java)
+//        intent.putExtra("DOCTOR_ID", doctorId)
+//        startActivity(intent)
+//    }
 
-    fun goToDocDetail (view: View){
-        var intent = Intent (this, Doctorpage::class.java)
-        startActivity(intent)
-    }
 }

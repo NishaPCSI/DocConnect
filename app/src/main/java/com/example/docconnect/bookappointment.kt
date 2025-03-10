@@ -19,8 +19,5 @@ class Bookappointment : AppCompatActivity() {
             insets
         }
     }
-    fun goToBookAppointment(view: View){
-        var intent = Intent(this,  Bookappointment::class.java)
-        startActivity(intent)
-    }
+
 }

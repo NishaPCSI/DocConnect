@@ -2,4 +2,14 @@
 <resources>
 
     <style name="Theme.DocConnect" parent="Theme.AppCompat.DayNight.NoActionBar" />
+
+    <style name="TimeSlotButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/timeslot_background</item>
+        <item name="android:textColor">@color/timeslot_text_selector</item> <!-- Use selector -->
+        <item name="android:textSize">14sp</item>
+        <item name="android:padding">6dp</item>
+    </style>
+
 </resources>

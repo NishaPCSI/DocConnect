@@ -2,6 +2,7 @@ import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 // Data class representing a hospital
 data class Hospital(
@@ -97,6 +98,25 @@ data class DoctorDetails(  // Renamed from "Doctor"
     val doctorLocation: String
 )
 
+data class DoctorResponsee(
+    val isError: Boolean,
+    val response: DoctorContainer
+)
+
+data class DoctorContainer(
+    val doctor: Doctorr
+)
+
+data class Doctorr(
+    val doctorId: Int,
+    val doctorName: String,
+    val doctorProfession: String,
+    val doctorLocation: String,
+    val doctorExperience: String,
+    val aboutDoctor: String,
+    val rating: Float,
+    val total_patients: Int
+)
 
 
 // Retrofit API Service interface
@@ -106,6 +126,9 @@ interface ApiService {
 
     @GET("api/doctor/get_all_doctors")  // Replace with your actual endpoint
     fun getDoctors(): Call<DoctorResponse>
+
+    @GET("api/doctor/get_doctors/{id}")
+    fun getDoctorById(@Path("id") doctorId: Int): Call<DoctorResponsee>
 
     @GET("api/appointment/get_all_appointments")  // Change this endpoint as per your API
     fun getAppointments(): Call<AppointmentResponse>

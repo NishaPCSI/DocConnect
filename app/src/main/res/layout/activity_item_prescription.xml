@@ -11,34 +11,32 @@
         android:id="@+id/linearLayout23"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
         android:background="@drawable/lightskyblue"
         android:orientation="vertical"
+        android:padding="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
-            android:layout_width="280dp"
-            android:layout_height="48dp"
-            android:layout_marginLeft="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp">
 
             <ImageView
                 android:id="@+id/imageView24"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="24dp"
                 app:srcCompat="@drawable/doctoricon"
                 tools:layout_editor_absoluteX="32dp"
                 tools:layout_editor_absoluteY="441dp" />
 
             <LinearLayout
-                android:layout_width="190dp"
+                android:layout_width="match_parent"
                 android:layout_height="47dp"
+                android:layout_marginLeft="16dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -78,9 +76,8 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="285dp"
-            android:layout_height="46dp"
-            android:layout_marginLeft="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:orientation="vertical">
 

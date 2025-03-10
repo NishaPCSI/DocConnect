@@ -13,46 +13,55 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="Select Date"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:background="@android:drawable/editbox_background"
         android:drawableEnd="@android:drawable/ic_menu_my_calendar"
         android:focusable="false"
         android:hint="DD/MM/YYYY"
         android:padding="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView9"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <!-- Book Appointment Button -->
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/textView11"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:text="Select Time"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/etDate"
-        tools:layout_editor_absoluteX="67dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etDate" />
 
     <GridLayout
         android:id="@+id/gridLayoutTimeSlots"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:columnCount="3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="219dp">
+        app:layout_constraintTop_toBottomOf="@+id/textView11">
 
         <!-- Time Slot Buttons -->
         <Button
@@ -97,14 +106,21 @@
         android:id="@+id/btnBookAppointment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="155dp"
         android:background="@drawable/blueborder"
-        android:text="Book Appointment"
         android:onClick="goToBookAppointment"
+        android:text="Book Appointment"
         android:textColor="@android:color/white"
-        app:layout_goneMarginTop="40dp"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="528dp" />
-
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayoutTimeSlots"
+        app:layout_constraintVertical_bias="0.083"
+        app:layout_goneMarginTop="40dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.docconnect.RetroFile.RetrofitClient.BASE_URL
 import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -36,7 +37,7 @@ class HospitalActivity : AppCompatActivity() {
     private fun fetchHospitals() {
         val retrofit = Retrofit.Builder()
 //            .baseUrl("http://192.168.1.41:3000/") // Replace with your actual API base URL
-            .baseUrl("http://192.168.1.24:3000")
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
