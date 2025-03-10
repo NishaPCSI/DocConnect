@@ -90,7 +90,10 @@ class LoginActivity : AppCompatActivity() {
                     val token = response.body()!!.token
 
                     // Save token in SharedPreferences
-                    sharedPreferences.edit().putString("auth_token", token).apply()
+                    sharedPreferences.edit()
+                        .putString("auth_token", token)
+                        .putString("user_email",email)
+                        .apply()
 
                     Toast.makeText(this@LoginActivity, "Login Successful!", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this@LoginActivity, Homepage::class.java)

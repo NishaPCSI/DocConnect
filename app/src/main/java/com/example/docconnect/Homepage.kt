@@ -59,6 +59,8 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import android.widget.TextView
+import androidx.appcompat.widget.SearchView
 
 class Homepage : AppCompatActivity() {
     private val viewModel: DoctorsViewModel by viewModels()
@@ -67,10 +69,16 @@ class Homepage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_homepage)
+        // Inside onCreate of your Activity
+        val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
+        val userEmail = sharedPreferences.getString("user_email", "User") // Default: "User"
+
+        val emailTextView = findViewById<TextView>(R.id.textView18)
+        emailTextView.text = "Hello $userEmail"
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
-
+        val searchView = findViewById<SearchView>(R.id.searchView)
         adapter = DoctorsAdapter(listOf()) { doctorId ->
             val intent = Intent(this, Doctorpage::class.java)
             intent.putExtra("DOCTOR_ID", doctorId)  // Pass doctorId
@@ -87,6 +95,18 @@ class Homepage : AppCompatActivity() {
                 Toast.makeText(this, "Failed to load doctors", Toast.LENGTH_SHORT).show()
             }
         }
+        // Set up SearchView
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                query?.let { adapter.filter(it) }
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                newText?.let { adapter.filter(it) }
+                return true
+            }
+        })
     }
     fun goToPrescription (view: View){
         val intent = Intent (this, com.example.docconnect.Prescription::class.java)
